@@ -743,7 +743,7 @@ export default class App extends Component {
           id="chat-container"
           class="bg-gray-800 flex flex-col justify-end overflow-auto"
         >
-          <iframe class="embed-chat" src='http://10.0.1.1:8080/?state=\{"settings":\{"roomId":"!UQVmUfEcTmOOrzucFF:matrix.org", "infoURL": "https://stream.pixie.town/api/status"\}\}'>
+          <iframe class="embed-chat" src='https://streamchat.pixie.town/?state=\{"settings":\{"roomId":"!UQVmUfEcTmOOrzucFF:matrix.org", "infoURL": "https://stream.pixie.town/api/status"\}\}'>
           </iframe>
         </div>
       </section>
