@@ -6,7 +6,7 @@ May have overrides for other components with own stylesheets.
 /* variables */
 :root {
   --header-height: 3.5em;
-  --right-col-width: 24em;
+  --right-col-width: 30em;
   --video-container-height: calc((9 / 16) * 100vw);
   --header-bg-color: rgba(20,0,40,1);
   --user-image-width: 10em;
@@ -418,4 +418,13 @@ header {
   .modal__content {
     -webkit-overflow-scrolling: touch;
   }
+}
+
+.embed-chat {
+  position: fixed;
+  z-index: 9;
+  bottom: 0;
+  right: 0;
+  width: var(--right-col-width);
+  height: calc(100vh - var(--header-height));
 }

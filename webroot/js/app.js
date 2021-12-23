@@ -724,19 +724,30 @@ export default class App extends Component {
         onClose=${this.closeExternalActionModal}
       />`;
 
-    const chat = this.state.websocket
-      ? html`
-          <${Chat}
-            websocket=${websocket}
-            username=${username}
-            chatInputEnabled=${chatInputEnabled && !chatDisabled}
-            instanceTitle=${name}
-            accessToken=${this.state.accessToken}
-            inputMaxBytes=${maxSocketPayloadSize - EST_SOCKET_PAYLOAD_BUFFER ||
-            CHAT_MAX_MESSAGE_LENGTH}
-          />
-        `
-      : null;
+    // const chat = this.state.websocket
+    //   ? html`
+    //       <${Chat}
+    //         websocket=${websocket}
+    //         username=${username}
+    //         chatInputEnabled=${chatInputEnabled && !chatDisabled}
+    //         instanceTitle=${name}
+    //         accessToken=${this.state.accessToken}
+    //         inputMaxBytes=${maxSocketPayloadSize - EST_SOCKET_PAYLOAD_BUFFER ||
+    //         CHAT_MAX_MESSAGE_LENGTH}
+    //       />
+    //     `
+    //   : null;
+    const chat = html`
+      <section id="chat-container-wrap" class="flex flex-col">
+        <div
+          id="chat-container"
+          class="bg-gray-800 flex flex-col justify-end overflow-auto"
+        >
+          <iframe class="embed-chat" src='http://10.0.1.1:8080/?state=\{"settings":\{"roomId":"!UQVmUfEcTmOOrzucFF:matrix.org", "infoURL": "https://stream.pixie.town/api/status"\}\}'>
+          </iframe>
+        </div>
+      </section>
+    `;
 
     return html`
       <div
